@@ -18,4 +18,8 @@ app.get('*', (req, res) => {
 res.render('error404')
 })
 
+app.get('/places/*', (req, res) => {
+    res.render('index')
+    })
+
 app.listen(process.env.PORT)
