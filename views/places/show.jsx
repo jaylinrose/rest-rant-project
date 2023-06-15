@@ -5,15 +5,23 @@ function show (data) {
     return (
         <Def>
           <main>
-            <h1>{data.places.name}</h1>
+            <h1>{data.places}</h1>
           </main>
           <body><center>
-            <img src={data.places.pic} alt="Place Image" />
-            <br></br>
+            <img src={data.place.pic} alt={data.place.name} />
+            <h3>
+              Located in {data.place.city}, {data.place.state}
+            </h3>
             <h2>description</h2> 
-            {data.places.city}, {data.places.state}
+            {data.place.city}, {data.place.state}
+            <h3>
+              {data.place.showEstablished()}
+            </h3>
+            <h4>
+              Serving {data.place.cuisines}
+            </h4>
             <br></br>
-            {data.places.cuisines}        
+            {data.place.cuisines}        
             <h2>Rating</h2>
             currently unrated.
             <h2>Comments</h2>
