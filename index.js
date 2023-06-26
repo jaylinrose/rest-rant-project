@@ -21,15 +21,7 @@ app.use(express.urlencoded({extended: true}))
 // Controllers and Routes
 app.use('/places', require('./controllers/places'))
 
-const breadsController = require('./controllers/breads_controller') 
-
-app.use('/breads', breadsController) 
-
-//BAKERS 
-
-const bakersController = require('./controllers/bakers_controller') 
-app.use('/bakers', bakersController) 
-const PORT = process.env.PORT || 5000 
+const PORT = process.env.PORT || 3000 
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, () => {console.log('connected to : ', process.env.MONGO_URI)} ) 
 
 // 404 Page 
